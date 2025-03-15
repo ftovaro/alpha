@@ -36,15 +36,16 @@ env:
   secret:
     - RAILS_MASTER_KEY
     - DATABASE_PASSWORD
-  # clear:
+
+  clear:
   #   # Set number of cores available to the application on each server (default: 1).
   #   WEB_CONCURRENCY: 2
 
   #   # Match this to any external database server to configure Active Record correctly
-  DB_HOST: alpha-db
+    DB_HOST: alpha-db
 
   #   # Log everything from Rails
-  RAILS_LOG_LEVEL: debug
+    RAILS_LOG_LEVEL: debug
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
