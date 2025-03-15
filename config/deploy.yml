@@ -80,18 +80,17 @@ builder:
 
 # Use accessory services (secrets come from .kamal/secrets).
 accessories:
- db:
-   image: postgres:14
-   host: 157.245.115.194
-   # Change to 3306 to expose port to the world instead of just local network.
-   port: "localhost:5432:5432"
-   env:
-     secret:
-       - DATABASE_PASSWORD
-   files:
-     - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-   directories:
-     - data:/var/lib/postgresql/data
+  db:
+    image: postgres:14
+    host: 157.245.115.194
+    port: "5432:5432"
+    env:
+      secret:
+        - DATABASE_PASSWORD
+    files:
+      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - data:/var/lib/postgresql/data
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
