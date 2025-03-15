@@ -35,7 +35,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-    - DATABASE_PASSWORD
+    - POSTGRES_PASSWORD
 
   clear:
   #   # Set number of cores available to the application on each server (default: 1).
@@ -43,7 +43,7 @@ env:
 
   #   # Match this to any external database server to configure Active Record correctly
 #    DB_HOST: 157.245.115.194
-    DB_HOST: localhost
+    DB_HOST: 127.0.0.1
 
   #   # Log everything from Rails
     RAILS_LOG_LEVEL: debug
@@ -85,10 +85,13 @@ accessories:
   db:
     image: postgres:14
     host: 157.245.115.194
-    port: "localhost:5432:5432"
+    port: 127.0.0.1:5432:5432
     env:
+      clear:
+        - POSTGRES_DB: alpha_production
+        - POSTGRES_USER: username_production
       secret:
-        - DATABASE_PASSWORD
+        - POSTGRES_PASSWORD
     files:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:

@@ -81,8 +81,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    username: <%= ENV["DATABASE_USERNAME"] %>
-    password: <%= ENV["DATABASE_PASSWORD"] %>
+    database: alpha_production
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
     host: <%= ENV.fetch("DB_HOST") { "127.0.0.1" } %>
 #    port: 5432
 #    url: <%= ENV["DATABASE_URL"] %>
