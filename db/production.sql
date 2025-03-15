@@ -1,0 +1,4 @@
+CREATE DATABASE alpha_production;
+CREATE DATABASE alpha_production_cache;
+CREATE DATABASE alpha_production_queue;
+CREATE DATABASE alpha_production_cable;
