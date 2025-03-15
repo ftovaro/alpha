@@ -41,10 +41,10 @@ env:
   #   WEB_CONCURRENCY: 2
 
   #   # Match this to any external database server to configure Active Record correctly
-  #   DB_HOST: 192.168.0.2
+  DB_HOST: alpha-db
 
   #   # Log everything from Rails
-  #   RAILS_LOG_LEVEL: debug
+  RAILS_LOG_LEVEL: debug
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
@@ -83,7 +83,7 @@ accessories:
   db:
     image: postgres:14
     host: 157.245.115.194
-    port: "5432:5432"
+    port: "localhost:5432:5432"
     env:
       secret:
         - DATABASE_PASSWORD

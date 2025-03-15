@@ -83,8 +83,8 @@ production:
     <<: *default
     username: <%= ENV["DATABASE_USERNAME"] %>
     password: <%= ENV["DATABASE_PASSWORD"] %>
-    host: localhost
-    port: 5432
+    host: <%= ENV.fetch("DB_HOST") { "127.0.0.1" } %>
+#    port: 5432
 #    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
